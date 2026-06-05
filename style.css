@@ -57,11 +57,15 @@
       background: rgba(255, 255, 255, 0.52);
       color: #111;
       text-decoration: none;
+      transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
     }
 
     .quick-nav a:hover,
     .quick-nav a:focus {
       background: rgba(255, 255, 255, 0.82);
+      border-color: rgba(17, 17, 17, 0.24);
+      box-shadow: 0 7px 18px rgba(44, 74, 39, 0.08);
+      transform: translateY(-2px);
     }
 
     section {
@@ -145,6 +149,51 @@
       border: 1px solid rgba(17, 17, 17, 0.08);
       border-radius: 8px;
       text-align: center;
+      animation: fadeInUp 650ms ease-out both;
+      transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .decalogue li:hover {
+      background: rgba(255, 255, 255, 0.72);
+      border-color: rgba(17, 17, 17, 0.14);
+      box-shadow: 0 12px 26px rgba(44, 74, 39, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .decalogue li:nth-child(2) {
+      animation-delay: 80ms;
+    }
+
+    .decalogue li:nth-child(3) {
+      animation-delay: 160ms;
+    }
+
+    .decalogue li:nth-child(4) {
+      animation-delay: 240ms;
+    }
+
+    .decalogue li:nth-child(5) {
+      animation-delay: 320ms;
+    }
+
+    .decalogue li:nth-child(6) {
+      animation-delay: 400ms;
+    }
+
+    .decalogue li:nth-child(7) {
+      animation-delay: 480ms;
+    }
+
+    .decalogue li:nth-child(8) {
+      animation-delay: 560ms;
+    }
+
+    .decalogue li:nth-child(9) {
+      animation-delay: 640ms;
+    }
+
+    .decalogue li:nth-child(10) {
+      animation-delay: 720ms;
     }
 
     .decalogue li::before {
@@ -314,8 +363,14 @@
       }
 
       main,
-      .logo {
+      .logo,
+      .decalogue li {
         animation: none;
+      }
+
+      .quick-nav a,
+      .decalogue li {
+        transition: none;
       }
     }
 
