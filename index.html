@@ -151,6 +151,7 @@
 
     .contacts {
       display: grid;
+      justify-items: center;
       gap: 8px;
       margin-top: 46px;
       padding-top: 24px;
@@ -170,6 +171,13 @@
     .contacts a:hover,
     .contacts a:focus {
       text-decoration: underline;
+    }
+
+    .contact-logo {
+      display: block;
+      width: min(38vw, 120px);
+      height: auto;
+      margin-bottom: 12px;
     }
 
     @keyframes fadeInUp {
@@ -325,6 +333,7 @@
         </section>
 
         <footer class="contacts">
+          <img src="cia-liguria-logo.png" alt="Logo CIA Liguria" class="contact-logo">
           <h2>Contatti</h2>
           <a href="mailto:info@example.com">info@example.com</a>
           <a href="tel:+390000000000">+39 000 000 0000</a>
