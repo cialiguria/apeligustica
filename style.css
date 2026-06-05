@@ -326,36 +326,6 @@
   box-shadow: 0 6px 16px rgba(44, 74, 39, 0.08);
 }
 
-.article-index {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin: 0 auto 28px;
-  padding: 0;
-  list-style: none;
-}
-
-.article-index a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 3.2rem;
-  padding: 7px 10px;
-  border: 1px solid rgba(17, 17, 17, 0.14);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.54);
-  color: #111;
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 0.82rem;
-  text-decoration: none;
-}
-
-.article-index a:hover,
-.article-index a:focus {
-  background: rgba(255, 255, 255, 0.86);
-}
-
 .back-top {
   display: flex;
   justify-content: center;
