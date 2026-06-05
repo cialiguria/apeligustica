@@ -238,7 +238,7 @@
       display: block;
       width: min(38vw, 120px);
       height: auto;
-      margin-bottom: 12px;
+      margin: 0 auto 12px;
     }
 
     .contact-list {
