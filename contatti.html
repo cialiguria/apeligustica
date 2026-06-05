@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti Ape Ligustica</title>
+  <link rel="icon" type="image/png" href="ape-ligustica-logo.png">
+  <link rel="apple-touch-icon" href="ape-ligustica-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #eef7e9;
+      color: #111;
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .site-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 0 36px;
+    }
+
+    .logo {
+      display: block;
+      width: min(60vw, 280px);
+      height: auto;
+      animation: logoFloat 4.5s ease-in-out infinite;
+    }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 26px;
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 0.86rem;
+    }
+
+    .quick-nav a {
+      padding: 8px 13px;
+      border: 1px solid rgba(17, 17, 17, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.52);
+      color: #111;
+      text-decoration: none;
+    }
+
+    .quick-nav a:hover,
+    .quick-nav a:focus {
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    main {
+      animation: fadeInUp 850ms ease-out both;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      color: #111;
+      font-family: "Poppins", Arial, sans-serif;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: clamp(1.55rem, 4vw, 2.3rem);
+    }
+
+    .section-intro {
+      max-width: 620px;
+      margin: 0 auto 28px;
+      color: #333;
+      text-align: center;
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    .content-panel {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(20, 20, 20, 0.08);
+      border-radius: 8px;
+      padding: clamp(26px, 5vw, 44px);
+      box-shadow: 0 18px 40px rgba(44, 74, 39, 0.08);
+      text-align: center;
+    }
+
+    .contact-logo {
+      display: block;
+      width: min(38vw, 120px);
+      height: auto;
+      margin: 0 auto 18px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .contact-label {
+      color: #365037;
+      font-weight: 600;
+    }
+
+    a {
+      color: #111;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes logoFloat {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 24px 14px 44px;
+      }
+
+      .logo {
+        width: min(72vw, 220px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      main,
+      .logo {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <img src="ape-ligustica-logo.png" alt="Logo Ape Ligustica" class="logo">
+      <nav class="quick-nav" aria-label="Navigazione principale">
+        <a href="index.html#why-logo">Decalogo</a>
+        <a href="disciplinare.html">Disciplinare</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content-panel" aria-labelledby="contatti">
+        <img src="cia-liguria-logo.png" alt="Logo CIA Liguria" class="contact-logo">
+        <h1 id="contatti">Contatti</h1>
+        <p class="section-intro">Recapiti provvisori da aggiornare con i dati definitivi.</p>
+        <div class="contact-list">
+          <div class="contact-row">
+            <span class="contact-label">Email</span>
+            <a href="mailto:info@example.com">info@example.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Telefono</span>
+            <a href="tel:+390000000000">+39 000 000 0000</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Sede</span>
+            <span>Via T. Schiva, 48 - Imperia</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
