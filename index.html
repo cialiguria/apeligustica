@@ -35,6 +35,8 @@
 
     .site-header {
       display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
       padding: 8px 0 36px;
     }
@@ -48,6 +50,30 @@
 
     main {
       animation: fadeInUp 850ms ease-out both;
+    }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 26px;
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 0.86rem;
+    }
+
+    .quick-nav a {
+      padding: 8px 13px;
+      border: 1px solid rgba(17, 17, 17, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.52);
+      color: #111;
+      text-decoration: none;
+    }
+
+    .quick-nav a:hover,
+    .quick-nav a:focus {
+      background: rgba(255, 255, 255, 0.82);
     }
 
     section {
@@ -104,20 +130,27 @@
 
     .decalogue {
       counter-reset: decalogue;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
       list-style: none;
       padding: 0;
     }
 
     .decalogue li {
       position: relative;
-      margin-bottom: 16px;
-      padding-left: 3rem;
+      min-height: 100%;
+      margin: 0;
+      padding: 16px 16px 16px 3.6rem;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      border-radius: 8px;
     }
 
     .decalogue li::before {
       position: absolute;
-      top: 0.1rem;
-      left: 0;
+      top: 16px;
+      left: 16px;
       width: 2rem;
       height: 2rem;
       border-radius: 50%;
@@ -134,10 +167,19 @@
 
     .document-title {
       margin-top: 56px;
+      margin-bottom: 8px;
       padding-top: 42px;
       border-top: 1px solid rgba(17, 17, 17, 0.14);
       text-align: center;
-      text-transform: uppercase;
+    }
+
+    .document-subtitle {
+      max-width: 620px;
+      margin: 0 auto 28px;
+      color: #333;
+      text-align: center;
+      font-size: 0.94rem;
+      line-height: 1.6;
     }
 
     .disciplinary-content {
@@ -177,7 +219,7 @@
     .contacts {
       display: grid;
       justify-items: center;
-      gap: 8px;
+      gap: 10px;
       margin-top: 46px;
       padding-top: 24px;
       border-top: 1px solid rgba(17, 17, 17, 0.18);
@@ -203,6 +245,24 @@
       width: min(38vw, 120px);
       height: auto;
       margin-bottom: 12px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .contact-label {
+      color: #365037;
+      font-weight: 600;
     }
 
     @keyframes fadeInUp {
@@ -245,6 +305,10 @@
         padding: 20px 16px;
       }
 
+      .decalogue {
+        grid-template-columns: 1fr;
+      }
+
       .article-block {
         padding: 18px 16px;
       }
@@ -270,6 +334,11 @@
   <div class="page">
     <header class="site-header">
       <img src="ape-ligustica-logo.png" alt="Logo Ape Ligustica" class="logo">
+      <nav class="quick-nav" aria-label="Navigazione principale">
+        <a href="#why-logo">Decalogo</a>
+        <a href="#disciplinare">Disciplinare</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
     </header>
 
     <main>
@@ -289,7 +358,8 @@
         </ol>
 
         <section aria-labelledby="disciplinare" class="disciplinary-content">
-          <h2 id="disciplinare" class="document-title">Disciplinare per l'uso e la gestione del marchio territoriale di qualità agrituristica "Ape Ligustica"</h2>
+          <h2 id="disciplinare" class="document-title">Disciplinare Ape Ligustica</h2>
+          <p class="document-subtitle">Uso e gestione del marchio territoriale di qualità agrituristica.</p>
 
           <article class="article-block">
             <h3>Articolo 1 - Oggetto e Proprietà del Marchio</h3>
@@ -363,11 +433,23 @@
           </article>
         </section>
 
-        <footer class="contacts">
+        <footer class="contacts" id="contatti">
           <img src="cia-liguria-logo.png" alt="Logo CIA Liguria" class="contact-logo">
           <h2>Contatti</h2>
-          <a href="mailto:info@example.com">info@example.com</a>
-          <a href="tel:+390000000000">+39 000 000 0000</a>
+          <div class="contact-list">
+            <div class="contact-row">
+              <span class="contact-label">Email</span>
+              <a href="mailto:info@example.com">info@example.com</a>
+            </div>
+            <div class="contact-row">
+              <span class="contact-label">Telefono</span>
+              <a href="tel:+390000000000">+39 000 000 0000</a>
+            </div>
+            <div class="contact-row">
+              <span class="contact-label">Sede</span>
+              <span>Via T. Schiva, 48 - Imperia</span>
+            </div>
+          </div>
         </footer>
       </section>
     </main>
