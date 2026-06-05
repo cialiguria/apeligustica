@@ -3,61 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agriturismo Imperia</title>
+  <title>Ape Ligustica</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
     }
 
-    body {
-      min-height: 100vh;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 20px;
-      background: #fff;
-      color: #222;
-      font-family: "Poppins", sans-serif;
+    html {
+      scroll-behavior: smooth;
     }
 
-    main {
-      width: 100%;
-      text-align: center;
-      animation: fadeInUp 900ms ease-out both;
+    body {
+      margin: 0;
+      background: #eef7e9;
+      color: #111;
+      font-family: "Lora", Georgia, serif;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: center;
+      padding: 8px 0 36px;
     }
 
     .logo {
       display: block;
-      width: min(72vw, 260px);
+      width: min(54vw, 220px);
       height: auto;
-      margin: 0 auto 30px;
       animation: logoFloat 4.5s ease-in-out infinite;
     }
 
-    .subtitle {
+    main {
+      animation: fadeInUp 850ms ease-out both;
+    }
+
+    section {
+      margin: 0 0 42px;
+    }
+
+    h1,
+    h2,
+    h3 {
       margin: 0;
-      color: #2f2f2f;
-      font-size: clamp(1.2rem, 4vw, 1.6rem);
-      font-weight: 600;
-      line-height: 1.35;
+      color: #111;
+      font-family: "Poppins", Arial, sans-serif;
+      line-height: 1.25;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-size: clamp(1.55rem, 4vw, 2.3rem);
+      text-align: center;
+    }
+
+    h2 {
+      margin: 36px 0 14px;
+      font-size: clamp(1.2rem, 3vw, 1.55rem);
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      font-size: clamp(1.05rem, 2.6vw, 1.25rem);
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ol,
+    ul {
+      margin: 0;
+      padding-left: 1.4rem;
+    }
+
+    li {
+      margin: 0 0 12px;
+      padding-left: 0.2rem;
+    }
+
+    .content-panel {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(20, 20, 20, 0.08);
+      border-radius: 8px;
+      padding: clamp(22px, 4vw, 40px);
+      box-shadow: 0 18px 40px rgba(44, 74, 39, 0.08);
+    }
+
+    .decalogue {
+      counter-reset: decalogue;
+      list-style: none;
+      padding: 0;
+    }
+
+    .decalogue li {
+      position: relative;
+      margin-bottom: 16px;
+      padding-left: 3rem;
+    }
+
+    .decalogue li::before {
+      position: absolute;
+      top: 0.1rem;
+      left: 0;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: #dcefd3;
+      color: #111;
+      content: counter(decalogue);
+      counter-increment: decalogue;
+      display: grid;
+      place-items: center;
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .document-title {
+      margin-top: 8px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .office {
+      margin: 28px 0;
+      padding: 18px 20px;
+      background: #f7fbf4;
+      border-left: 4px solid #b8d7a9;
+    }
+
+    .sanctions {
+      margin-top: 8px;
     }
 
     .contacts {
-      display: flex;
-      flex-direction: column;
+      display: grid;
       gap: 8px;
-      margin: 22px 0 0;
-      color: #3a3a3a;
-      font-size: clamp(0.95rem, 3vw, 1.05rem);
-      line-height: 1.5;
+      margin-top: 46px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(17, 17, 17, 0.18);
+      text-align: center;
+    }
+
+    .contacts h2 {
+      margin: 0 0 6px;
     }
 
     .contacts a {
-      color: inherit;
+      color: #111;
       text-decoration: none;
     }
 
@@ -85,11 +189,37 @@
       }
 
       50% {
-        transform: translateY(-6px);
+        transform: translateY(-5px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 24px 14px 44px;
+      }
+
+      .site-header {
+        padding-bottom: 28px;
+      }
+
+      .logo {
+        width: min(66vw, 180px);
+      }
+
+      .content-panel {
+        padding: 20px 16px;
+      }
+
+      .decalogue li {
+        padding-left: 2.6rem;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
       main,
       .logo {
         animation: none;
@@ -98,13 +228,107 @@
   </style>
 </head>
 <body>
-  <main>
-    <img src="ape-ligustica-logo.png" alt="Logo Ape Ligustica" class="logo">
-    <p class="subtitle">Agriturismo Imperia</p>
-    <div class="contacts" aria-label="Contatti">
-      <a href="mailto:info@example.com">info@example.com</a>
-      <a href="tel:+390000000000">+39 000 000 0000</a>
-    </div>
-  </main>
+  <div class="page">
+    <header class="site-header">
+      <img src="ape-ligustica-logo.png" alt="Logo Ape Ligustica" class="logo">
+    </header>
+
+    <main>
+      <section class="content-panel" aria-labelledby="why-logo">
+        <h1 id="why-logo">Perché seguire il logo?</h1>
+        <ol class="decalogue">
+          <li>L’agriturismo mette a disposizione degli ospiti supporti (menu, lavagnette, etc.) riportanti in maniera chiara, trasparente e dettagliata l’offerta enogastronomica, con descrizione degli ingredienti e dei prodotti aziendali o del territorio circostante. Deve inoltre mettere a disposizione le informazioni sui vini e olii.</li>
+          <li>Almeno il 70% delle ricette sono tipiche del territorio locale o regionale, il 100% dei piatti deve essere di produzione propria.</li>
+          <li>L’offerta proposta deriva almeno dal 40% da prodotti/materie prime derivanti dal fondo dell’azienda o dall’80% da prodotti di aziende agricole/ittiche del territorio.</li>
+          <li>Produzione interna di alcuni prodotti principali (dolci, semilavorati, salse) usando ingredienti propri o del territorio circostante.</li>
+          <li>Il menu prevede piatti con almeno l’80% di prodotti stagionali.</li>
+          <li>Presenza obbligatoria di prodotti di eccellenza DOP/IGP locali (vino, olio, olive in salamoia).</li>
+          <li>Uso preferenziale di prodotti biologici, SQNPI o sostenibili.</li>
+          <li>Vini almeno al 70% DOP, DOCG o IGP prodotti da aziende locali/regionali.</li>
+          <li>Uso di olio extravergine di oliva di produzione propria o certificato DOP “Riviera Ligure”.</li>
+          <li>Offerta di alcolici e superalcolici rispettare le percentuali di provenienza indicate.</li>
+        </ol>
+
+        <section aria-labelledby="disciplinare">
+          <h2 id="disciplinare" class="document-title">Disciplinare per l'uso e la gestione del marchio territoriale di qualità agrituristica "Ape Ligustica"</h2>
+
+          <h3>Articolo 1 - Oggetto e Proprietà del Marchio</h3>
+          <ol>
+            <li>Il presente disciplinare regola la concessione in uso e la gestione del Marchio Territoriale di Qualità Agrituristica denominato "Ape Ligustica"; , marchio registrato presso …….. in data ….</li>
+            <li>Il Marchio è di proprietà esclusiva di Confederazione Italiana Agricoltori della Liguria (CIA Liguria), con sede in Genova, Via Colombo 15/5, licenziante</li>
+            <li>Il Marchio è registrato e protetto dalle leggi vigenti sulla proprietà industriale ed è volto a identificare la rete delle strutture agrituristiche di qualità della regione.</li>
+          </ol>
+
+          <h3>Articolo 2 - Finalità</h3>
+          <ol>
+            <li>Il Marchio persegue l'obiettivo di identificare, valorizzare e promuovere una rete qualificata di strutture agrituristiche collocate nel territorio della Regione Liguria.</li>
+            <li>Il Marchio garantisce al consumatore la massima trasparenza, la sostenibilità delle attività e l'autenticità del legame con l'agricoltura e la pesca del territorio ligure.</li>
+          </ol>
+
+          <h3>Articolo 3 - Soggetti Beneficiari (licenziatari)</h3>
+          <ol>
+            <li>Possono richiedere l'uso del Marchio esclusivamente le imprese agrituristiche regolarmente iscritte all’Albo regionale che ne fanno richiesta e sottoscrivono il presente disciplinare con la CIA della Liguria.</li>
+            <li>I soggetti autorizzati assumono la qualifica di "licenziatario".</li>
+          </ol>
+
+          <h3>Articolo 4 – Decalogo Ape Ligustica</h3>
+          <p>Per ottenere e mantenere il diritto d'uso del Marchio "Ape Ligustica";, il licenziatario deve garantire che l'offerta enogastronomica e l'approvvigionamento della struttura rispettino tassativamente quanto prescritto dal Decalogo Ape Ligustica che forma parte integrante del presente disciplinare.</p>
+
+          <h3>Articolo 5 - Modalità di Concessione e Durata</h3>
+          <p>L'uso del Marchio è concesso a seguito dell'esito positivo dell'istruttoria tecnica e della firma del contratto di uso del marchio.</p>
+          <p>Il diritto d'uso è strettamente personale, non cedibile a terzi, e legato alla singola struttura autorizzata.</p>
+          <p>La durata della concessione coincide con la validità del contratto di uso, salvo revoca o sospensione anticipata.</p>
+
+          <div class="office">
+            <p><strong>CONFEDERAZIONE ITALIANA AGRICOLTORI</strong></p>
+            <p><strong>Sede Provinciale:</strong><br>IMPERIA – Via T. Schiva, 48 – Tel.0183 291801 – Fax 0183 290304<br>C.F. 80011740083</p>
+          </div>
+
+          <h3>Articolo 6 - Linee Guida di Utilizzo Grafico</h3>
+          <ol>
+            <li>Il Marchio deve essere utilizzato esclusivamente nella sua configurazione grafica originale, rispettando i colori, i font e le proporzioni indicati nel Brand Manual "Ape Ligustica";.</li>
+            <li>È fatto divieto assoluto di modificare, dissociare o integrare il Marchio con altri elementi grafici senza autorizzazione scritta di CIA Liguria.</li>
+            <li>Il Marchio deve essere esposto all'ingresso della struttura tramite la targa ufficiale e inserito nel sito web. Non è consentito utilizzarlo nei materiali promozionali del licenziatario.</li>
+          </ol>
+
+          <h3>Articolo 7 - Condizioni Economiche</h3>
+          <ol>
+            <li>Il Franchisee è tenuto al pagamento di una quota di adesione annuale pari a 100,00 € (cento euro/anno).</li>
+            <li>La quota deve essere versata entro il 30 gennaio di ogni anno di validità del contratto.</li>
+            <li>Il mancato o ritardato pagamento della quota annuale comporta la sospensione immediata del diritto d'uso del Marchio fino alla totale regolarizzazione della posizione finanziaria.</li>
+          </ol>
+
+          <h3>Articolo 8 - Controlli e Vigilanza</h3>
+          <ol>
+            <li>Il licenziante, tramite propri ispettori, enti di certificazione o tecnici terzi incaricati , effettua verifiche periodiche (anche senza preavviso) per constatare il rispetto del Decalogo Ape Ligustica previsto all’art. 4.</li>
+            <li>Il licenziatario si impegna a esibire i registri di carico/scarico, le fatture d'acquisto e la documentazione fiscale atta a dimostrare la tracciabilità e la provenienza ligure delle materie prime utilizzate.</li>
+          </ol>
+
+          <h3>Articolo 9 - Sanzioni, Sospensione e Revoca</h3>
+          <ol>
+            <li>La violazione delle condizioni previste dal decalogo o il mancato rispetto delle linee guida grafiche comporta l'applicazione delle seguenti sanzioni:</li>
+            <li>
+              <ul class="sanctions">
+                <li>Diffida scritta con termine di 15 giorni per ripristinare i requisiti minimi.</li>
+                <li>Sospensione del diritto d'uso del Marchio da 1 a 6 mesi in caso di recidiva.</li>
+                <li>Revoca definitiva del Marchio e risoluzione del contratto di franchising per gravi inadempienze (es. utilizzo di materie prime extra-regionali spacciate per liguri).</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h3>Articolo 10 - Foro Competente</h3>
+          <ol>
+            <li>Per qualsiasi controversia relativa all'interpretazione, esecuzione e validità del presente disciplinare è competente in via esclusiva il Foro di Genova.</li>
+          </ol>
+        </section>
+
+        <footer class="contacts">
+          <h2>Contatti</h2>
+          <a href="mailto:info@example.com">info@example.com</a>
+          <a href="tel:+390000000000">+39 000 000 0000</a>
+        </footer>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
