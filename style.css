@@ -7,15 +7,31 @@
     }
 
     body {
+      position: relative;
+      min-height: 100vh;
       margin: 0;
-      background: #eef7e9;
+      background: #dfeecf;
       color: #111;
       font-family: "Inter", Arial, sans-serif;
       font-size: 0.95rem;
       line-height: 1.7;
     }
 
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image: url("bee-pattern.png");
+      background-position: 28px 24px;
+      background-size: 150px auto;
+      content: "";
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
     .page {
+      position: relative;
+      z-index: 1;
       width: min(100%, 980px);
       margin: 0 auto;
       padding: 32px 20px 56px;
