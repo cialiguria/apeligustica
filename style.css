@@ -23,7 +23,7 @@
       z-index: 0;
       background-image: url("bee-pattern.png");
       background-position: 28px 24px;
-      background-size: 150px auto;
+      background-size: 96px auto;
       content: "";
       opacity: 0.08;
       pointer-events: none;
